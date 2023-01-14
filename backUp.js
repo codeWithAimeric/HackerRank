@@ -27,3 +27,7 @@ let a = 12;
 let aReverseString = a.toString().split("").reverse().join("");
 //transform this string into number
 let aNumber = Number(a);
+
+//count number of occurence in a string 
+console.log(("str1,str2,str3,str4".match(/,/g) || []).length); //logs 3
+console.log(("str1,str2,str3,str4".match(new RegExp("str", "g")) || []).length); //logs 4
