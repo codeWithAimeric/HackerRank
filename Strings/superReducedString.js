@@ -7,30 +7,32 @@
 
 function superReducedString(s) {
     // Write your code here
-    let tab = s.split('');
-    let isDuplicated = false; 
-    let res = "";
-    while(tab.length > 0){
-        for(let i=0; i<tab.length; i++){
-            isDuplicated=false;
-            if(tab[i] == tab[i+1]){
-                isDuplicated = true;
-                tab.splice(i, 1);
-                tab.splice(i+1, 1);
-                break;
+    let arr = s.split('');
+    for(let i=0; i<arr.length; i++){
+        if(arr[i] == arr[i+1]){
+            arr.splice(i, 2);
+            i=0;
+        }else if(arr[i] == arr[i-1]){
+            arr.splice(i-1, 2);
+            i=0;
+        }
+        if(i==arr.length-1){
+            if(arr[i] == arr[i-1]){
+                arr.splice(i-1, 2);
             }
         }
-        if(!isDuplicated){
-            break;
-        }
+        console.log(arr);
     }
-    if(tab.length == 0){
-        return "Empty String";
+    if(arr.length == 0){
+        return 'Empty String';
     }else{
-        res = tab.join('');
-        return res; 
+        return arr.join('');
     }
 }
-
-let s= "abba";
+let s = 'acdqglrfkqyuqfjkxyqvnrtysfrzrmzlygfveulqfpdbhlqdqrrqdqlhbdpfqluevfgylzmrzrfsytrnvqyxkjfquyqkfrlacdqj';
+// let s = 'oagciicgaoyjmahhamjymmwjnnjwmmvpxhpphxpvlikappakilyygvkkvgyymlpfddfplmhiodvvdoihfxpkggkpxfuevvuuvveu';
 console.log(superReducedString(s));
+// transform array to string and vice versa
+// const str = "hello";
+// const arr = str.split('');
+// console.log(arr.join(''));

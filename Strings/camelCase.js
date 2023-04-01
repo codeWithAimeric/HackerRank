@@ -7,14 +7,15 @@
 
 function camelcase(s) {
     // Write your code here
+    let arr = s.split('');
     let count = 1;
-    for(let i=0; i<s.length; i++){
-        if(s[i].toUpperCase() == s[i]){
+    for(let i=0; i<arr.length; i++){
+        if(arr[i].toUpperCase() == arr[i]){
             count++;
         }
     }
     return count; 
 }
 
-let s = "oneTwoThree";
+let s = 'saveChangesInTheEditor';
 console.log(camelcase(s));
