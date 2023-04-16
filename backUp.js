@@ -16,11 +16,8 @@ object.key1 = "value1";
 object["key1"] = "value1";
 
 //remove duplicate value in array js
-function onlyUnique(value, index, self) {
-  return self.indexOf(value) === index;
-}
-var a = ['a', 1, 'a', 2, '1'];
-var unique = a.filter(onlyUnique);
+const myArray = [1, 2, 3, 4, 4, 5, 6, 6];
+const uniqueArray = myArray.filter((item, index) => myArray.indexOf(item) === index);
 
 //reverse number into string 
 let a = 12;
