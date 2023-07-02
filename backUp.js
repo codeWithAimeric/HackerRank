@@ -54,3 +54,17 @@ let array2 = [4,8,9,10];
 let is_same = (array1.length == array2.length) && array1.every(function(element, index) {
   return element === array2[index]; 
 });
+
+//concat all element in array of array and transform them into one string : 
+// myString2 = 'aacbbabaccddbdbadbac'
+let myTabOfString = [
+  [ 'a', 'ac' ],
+  [ 'b', 'ba', 'bac' ],
+  [ 'c' ],
+  [ 'd', 'db', 'dba', 'dbac' ]
+];
+let myString2 = myTabOfString.reduce((acc, curr) => acc.concat(curr), []).join('');
+
+
+// Trier les sous-chaînes dans un tableau à partir d'un 'Set'(substrings) dans l'ordre lexicographique
+// const sortedSubstrings = Array.from(substrings).sort();

@@ -126,5 +126,13 @@ function twoPluses(grid) {
 }
 
 // let grid = ['BGBBGB', 'GGGGGG', 'BGBBGB', 'GGGGGG', 'BGBBGB', 'BGBBGB']; //25
-let grid = ['GGGGGG', 'GBBBGB', 'GGGGGG', 'GGBBGB', 'GGGGGG']; //5
+// let grid = ['GGGGGG', 'GBBBGB', 'GGGGGG', 'GGBBGB', 'GGGGGG']; //5
+let grid = ['GGGGGGGG',
+    'GBGBGGBG',
+    'GBGBGGBG',
+    'GGGGGGGG',
+    'GBGBGGBG',
+    'GGGGGGGG',
+    'GBGBGGBG',
+    'GGGGGGGG']; //81
 console.log(twoPluses(grid));
