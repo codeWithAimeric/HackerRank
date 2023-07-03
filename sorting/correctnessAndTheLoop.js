@@ -24,4 +24,3 @@ var ar;
 ar = [9, 8, 6, 7, 3, 5, 4, 1, 2];
 // ar = [7, 4, 3, 5, 6, 2];
 console.log(insertionSort(ar));
-//print ar

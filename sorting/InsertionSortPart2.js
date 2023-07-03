@@ -38,3 +38,4 @@ function insertionSort2(n, arr) {
 let tab = [3, 4, 7, 5, 6, 2, 1];
 let n = 7;
 insertionSort2(n, tab);
+

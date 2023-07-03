@@ -8,24 +8,17 @@
 
 function insertionSort1(n, arr) {
     // Write your code here
-    let temp = arr[arr.length - 1];
-    for(let j=arr.length -2; j>=0; j--){
-        if(j == 0 && arr[j]>temp){
-            arr[j+1] = arr[j];
-            console.log(...arr);
-            arr[j] = temp;
-            console.log(...arr);
-            break; 
-        }
-        if(arr[j] > temp){
-            arr[j+1] = arr[j];
-        }else{
-            arr[j+1] = temp; 
-            console.log(...arr);
-            break;
-        }
-        console.log(...arr);
+    const key = arr[n - 1];
+
+    let i;
+    for (i = n - 2; i >= 0 && arr[i] > key; i--) {
+        arr[i + 1] = arr[i];
+        console.log(arr.join(' '));
     }
+
+    console.log('arr before = = =', ...arr);
+    arr[i + 1] = key;
+    console.log(arr.join(' '));
 }
 
 // let tab = [2, 3, 4, 5, 6, 7, 8, 9, 10, 1];
