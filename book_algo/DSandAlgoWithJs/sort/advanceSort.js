@@ -138,6 +138,51 @@ function qSort(arr)
     return qSort(left).concat(pivot, qSort(right));
 }
 
+/**
+ * ---------quick sort avec une approche itérative qui évite la récursivité excessive
+ * -----------------*******************----------------------------------------------
+ */
+function qSortIterative(arr){
+    if(arr.length <= 1){
+      return arr;
+    }
+    
+    let stack = [[0, arr.length - 1]];
+    
+    while(stack.length > 0){
+      let [low, high] = stack.pop();
+      
+      if(low < high){
+        let pivotIndex = partition(arr, low, high);
+        stack.push([low, pivotIndex - 1]);
+        stack.push([pivotIndex + 1, high]);
+      }
+    }
+    
+    return arr;
+}
+  
+function partition(arr, low, high){
+    let pivot = arr[high];
+    let i = low - 1;
+
+    for(let j = low; j < high; j++){
+        if(arr[j] < pivot){
+            i++;
+            swapIterative(arr, i, j);
+        }
+    }
+    swapIterative(arr, i + 1, high);
+
+    return i + 1;
+}
+
+function swapIterative(arr, i, j){
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
 var nums = new CArray(10);
 nums.setData();
 console.log("Before Shellsort: \n");

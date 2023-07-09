@@ -68,3 +68,43 @@ let myString2 = myTabOfString.reduce((acc, curr) => acc.concat(curr), []).join('
 
 // Trier les sous-chaînes dans un tableau à partir d'un 'Set'(substrings) dans l'ordre lexicographique
 // const sortedSubstrings = Array.from(substrings).sort();
+
+//---vérifier que deux objets {a:1, b:4} et {b:4, a:1} sont identiques 
+function areObjectsEqual(obj1, obj2) {
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+
+  if (keys1.length !== keys2.length) {
+    return false;
+  }
+
+  for (let key of keys1) {
+    if (obj1[key] !== obj2[key]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+//---vérifier que deux Map { 'map11' => 1, 'map12' => 2 } sont identiques
+function areMapEqual(map1, map2){
+  const keys1 = map1.keys();
+  const keys2 = map2.keys();
+
+  if(map1.size !== map2.size){
+      return false; 
+  }
+
+  for (const [key, value] of map1) {
+      if(!map2.has(key) || map2.get(key) != value){
+          return false; 
+      }
+  }
+  return true;
+}
+
+/**
+ * ----------------itération sur deux Map() et deux objets {} et get de leur key respectif voir : 
+ *  ------------------    /home/aimeric/SymRea/HackerRank/neetcode/arrayAndHashing/topKFrequent.js
+ */
