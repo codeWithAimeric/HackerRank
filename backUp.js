@@ -108,3 +108,14 @@ function areMapEqual(map1, map2){
  * ----------------itération sur deux Map() et deux objets {} et get de leur key respectif voir : 
  *  ------------------    /home/aimeric/SymRea/HackerRank/neetcode/arrayAndHashing/topKFrequent.js
  */
+
+
+/**
+ * --------------trier un Map() par ordre décroissant en fonction de ces keys-----
+ * mycar = {--------------};
+ * let myArr = Array.from(myCar);
+ *  myArr.sort((a, b) => b[0]-a[0]);
+ *   const sortedMap = new Map(myArr);
+ * 
+ * -----------invérser b et a si ordre croissant et remplacer 0 par 1 si triage selon les values
+ */
