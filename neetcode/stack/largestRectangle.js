@@ -3,31 +3,20 @@
  * @return {number}
  */
 var largestRectangleArea = function(heights) {
-    let width = 1;
-    let temp = 0;
-    let val = 0;
+    let maxArea = 0;
     const stack = [];
-    if(heights.length == 1){
-        return heights[0];
-    }
-    stack.push(heights[0]);
-    for(let i=0; i<heights.length-1; i++){
-        temp = heights[i];
-        width = 1;
-        for(let j=i+1; j<heights.length; j++){
-            if(heights[j] <= heights[i]){
-                width = (j-i);
-                val = temp * width;
-                stack.push(val);
-                break;
-            }else{
-                console.log('dans else == = = ===');
-                stack.push(heights[j]);
-            }
+    heights.push(0); 
+
+    for (let i = 0; i < heights.length; i++) {
+        while (stack.length > 0 && heights[i] < heights[stack[stack.length - 1]]) {
+            const height = heights[stack.pop()];
+            const width = stack.length === 0 ? i : i - stack[stack.length - 1] - 1;
+            maxArea = Math.max(maxArea, height * width);
         }
+        stack.push(i);
     }
-    console.log(stack);
-    return Math.max(...stack);
+
+    return maxArea;
 };
 
 // let heights = [2,1,5,6,2,3];
