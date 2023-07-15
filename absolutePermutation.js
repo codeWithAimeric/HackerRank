@@ -34,4 +34,6 @@ function absolutePermutation(n, k) {
 
 let n = 100000;
 let k= 40;
-console.log(absolutePermutation(n, k));
+// console.log(absolutePermutation(n, k));
+
+module.exports = absolutePermutation;

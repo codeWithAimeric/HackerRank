@@ -1,0 +1,14 @@
+{
+  "name": "hackerrank",
+  "version": "1.0.0",
+  "description": "algo and DS with JS to become better than yesterday",
+  "main": "2DArrayDS.js",
+  "scripts": {
+    "test": "jest --testPathPattern='../absolutePermutation.spec.js'"
+  },
+  "author": "Aimeric Raza",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
+}
