@@ -13,3 +13,8 @@ Pour lancer tout les fichier de test en même temps :
 -lancer la commande : "npm test"
 
 -----------**********************-----------------
+
+-----------**********************-----------------
+installer "npm install ts-node" pour pouvoir executer 
+des fichiers ts
+-----------**********************-----------------

@@ -119,3 +119,22 @@ function areMapEqual(map1, map2){
  * 
  * -----------invérser b et a si ordre croissant et remplacer 0 par 1 si triage selon les values
  */
+
+/**
+ * décaler les éléments d'un tableau vers la droite
+ *----------à chaque itération  
+ */
+function circularShiftLeft(arr) {
+  const lastElement = arr[arr.length - 1];
+
+  for (let i = arr.length - 1; i > 0; i--) {
+    arr[i] = arr[i - 1];
+  }
+
+  arr[0] = lastElement;
+}
+const decaledArr = ['a', 'b', 'c'];
+for (let i = 0; i < decaledArr.length; i++) {
+  console.log(decaledArr);
+  circularShiftLeft(decaledArr);
+}

@@ -7,13 +7,13 @@
  *  2. 2D_INTEGER_ARRAY queries
  */
 
-function arrayManipulation(n, queries) {
+const arrayManipulation = (n: number, queries: number[][]): number => {
     // Write your code here
-    const arr = new Array(n + 2).fill(0), qn = queries.length;
-    let sum = 0, maxValue = 0;
+    const arr: Array<number> = new Array(n + 2).fill(0), qn = queries.length;
+    let sum: number = 0, maxValue: number = 0;
 
     for (let i = 0; i < qn; i++) {
-        const [min, max, sum] = queries[i];
+        const [min, max, sum]: Array<number> = queries[i];
         arr[min] += sum;
         maxValue = maxValue < sum ? sum : maxValue
         if (max <= n) {
@@ -30,6 +30,6 @@ function arrayManipulation(n, queries) {
     return maxValue;
 }
 
-let n = 5;
-let queries = [[1, 2, 100], [2, 5, 100], [3, 4, 100]];
+let n: number = 5;
+let queries: number[][] = [[1, 2, 100], [2, 5, 100], [3, 4, 100]];
 console.log(arrayManipulation(n, queries));
