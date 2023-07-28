@@ -7,13 +7,13 @@
  *  2. STRING path
  */
 
-function countingValleys(steps, path) {
+const countingValleys = (steps: number, path: string): number => {
     // Write your code here
-    let point = 0;
-    let tempFin = -1;
-    let tempDebut = 0;
-    let resTemp; 
-    let count = 0;
+    let point: number = 0;
+    let tempFin: number = -1;
+    let tempDebut: number = 0;
+    let resTemp: string; 
+    let count: number = 0;
     for(let i=0; i<path.length; i++){
         if(path[i] == 'U'){
             point++;
@@ -34,6 +34,6 @@ function countingValleys(steps, path) {
     return count;      
 }
 
-let steps = 8;
-let path = 'UDDDUDUU'; //1
+let steps: number = 8;
+let path: string = 'UDDDUDUU'; //1
 console.log(countingValleys(steps, path));

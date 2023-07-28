@@ -4,7 +4,7 @@
   "description": "algo and DS with JS to become better than yesterday",
   "main": "2DArrayDS.js",
   "scripts": {
-    "test": "jest --testPathPattern='../absolutePermutation.spec.js'"
+    "test": "jest --testPathPattern='../acmIcpcTeam.spec.js'"
   },
   "author": "Aimeric Raza",
   "license": "ISC",

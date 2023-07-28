@@ -5,13 +5,13 @@
  * The function accepts INTEGER_ARRAY candles as parameter.
  */
 
-function birthdayCakeCandles(candles) {
+const birthdayCakeCandles = (candles: Array<number>): number => {
     // Write your code here
-    let count = 0;
-    let max = 0;    
+    let count: number = 0;
+    let max: number = 0;    
     for(let i = 0; i < candles.length ; i++)
     {
-        let num = candles[i];
+        let num: number = candles[i];
         if(num > max)
         {
             max = num;

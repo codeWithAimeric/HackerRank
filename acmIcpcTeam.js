@@ -38,7 +38,9 @@ function acmTeam(topic) {
     return resTab;
 }
 
-// let topics = ['10101', '11110', '00010'];
+let topics = ['10101', '11110', '00010'];
 // let topics = ['10101', '11100', '11010', '00101'];
-let topics = ['11101', '10101', '11001', '10111', '10000', '01110'];
-console.log(acmTeam(topics));
+// let topics = ['11101', '10101', '11001', '10111', '10000', '01110'];
+// console.log(acmTeam(topics));
+
+module.exports = acmTeam;

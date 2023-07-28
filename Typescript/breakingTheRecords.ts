@@ -5,13 +5,13 @@
  * The function accepts INTEGER_ARRAY scores as parameter.
  */
 
-function breakingRecords(scores) {
+const breakingRecords = (scores: Array<number>): Array<number> => {
     // Write your code here
-    let tempMax = scores[0];
-    let tempMin = scores[0];
-    let countMax = 0;
-    let countMin = 0;
-    let resTab = [];
+    let tempMax :number = scores[0];
+    let tempMin :number = scores[0];
+    let countMax :number = 0;
+    let countMin :number = 0;
+    let resTab :Array<number> = [];
     for(let i=1; i<scores.length; i++){
         if(tempMax < scores[i]){
             tempMax = scores[i];
