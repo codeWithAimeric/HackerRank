@@ -138,3 +138,8 @@ for (let i = 0; i < decaledArr.length; i++) {
   console.log(decaledArr);
   circularShiftLeft(decaledArr);
 }
+
+/**
+ * principe fenetre glissante sans faire de slice
+ * -------- HackerRank/sorting/fraudulentActivity.js
+ */
