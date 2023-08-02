@@ -26,3 +26,10 @@ function designerPdfViewer(h, word) {
     res = valMax * wordLength;
     return res;
 }
+module.exports = designerPdfViewer;
+
+// let h = [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
+// let word = "abc"; //9
+let h = [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7];
+let word = "zaba"; //28
+console.log(designerPdfViewer(h, word));

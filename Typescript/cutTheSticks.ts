@@ -5,10 +5,10 @@
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-function cutTheSticks(arr) {
+const cutTheSticks = (arr: Array<number>): Array<number> => {
     // Write your code here
-    let resTab = [];
-    let minVal = 0;
+    let resTab: Array<number> = [];
+    let minVal: number = 0;
     resTab.push(arr.length);
     while(arr.length > 1){
         minVal = Math.min(...arr);
@@ -24,8 +24,7 @@ function cutTheSticks(arr) {
     }
     return resTab;
 }
-module.exports = cutTheSticks;
 
-let arr = [5, 4, 4, 2, 2, 8]; //[ 6, 4, 2, 1 ]
-//let arr = [1, 2, 3, 4, 3, 3, 2, 1]; //[ 8, 6, 4, 1 ]
+
+let arr = [5, 4, 4, 2, 2, 8];
 console.log(cutTheSticks(arr));

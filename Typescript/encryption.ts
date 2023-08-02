@@ -5,15 +5,15 @@
  * The function accepts STRING s as parameter.
  */
 
-function encryption(s) {
+const encryption = (s: string): string => {
     // Write your code here
-    let lengthS = 0;
-    let valMin = 0;
-    let valMax = 0;
-    let tempString = '';
-    let valSlice = 0;
-    let tabString = [];
-    let res = '';
+    let lengthS: number = 0;
+    let valMin: number = 0;
+    let valMax: number = 0;
+    let tempString: string = '';
+    let valSlice: number = 0;
+    let tabString: Array<string> = [];
+    let res: string = '';
 
     s = s.replace(/ +/g, "");
     lengthS = s.length; 
@@ -37,9 +37,8 @@ function encryption(s) {
     }
     return res;
 }
-module.exports = encryption; 
 
 
-let s = "have a nice day"; //hae and via ecy
-// let s = "i ffact s dontf i ttoth e orych a ngeth e facts"; //isieae fdtonf fotrga anoyec cttctt tfhhhs
+// let s = "have a nice day"; //hae and via ecy
+let s = "i ffact s dontf i ttoth e orych a ngeth e facts"; //isieae fdtonf fotrga anoyec cttctt tfhhhs
 console.log(encryption(s));
