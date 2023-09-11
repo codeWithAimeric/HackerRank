@@ -143,3 +143,18 @@ for (let i = 0; i < decaledArr.length; i++) {
  * principe fenetre glissante sans faire de slice
  * -------- HackerRank/sorting/fraudulentActivity.js
  */
+
+
+/**
+ * Générer tout les substring possible d'une chaîne
+ *  const substrings = [];
+
+    for (let i = 0; i < s.length; i++) {
+        for (let j = i + 1; j <= s.length; j++) {
+            const substring = s.slice(i, j);
+            substrings.push(substring);
+        }
+    }
+
+    return substrings;
+ */
