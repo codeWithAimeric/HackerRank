@@ -1,27 +1,34 @@
-/*
- * Complete the 'timeConversion' function below.
- *
- * The function is expected to return a STRING.
- * The function accepts STRING s as parameter.
- */
-
 function timeConversion(s) {
-    // Write your code here
-    let [time, part] = [s.substring(0, s.length - 2), s.substring(s.length - 2)]
-
-  time = time.split(":").map(Number)
-
-  if (part === "PM" && time[0] === 12) time[0] = 12
-
-  if (part === "PM" && time[0] !== 12) time[0] = (time[0] + 12) % 24
-
-  if (part === "AM" && time[0] === 12) time[0] = 0
-
-  return time
-
-    .map(String)
-
-    .map(s => s.padStart(2, "0"))
-
-    .join(":")
+  // Write your code here
+  let myTab = {'01':'13', '02':'14', '03':'15', '04':'16', '05':'17', '06':'18', '07':'19',
+       '08':'20', '09':'21', '10':'22', '11':'23', '12':'12'};
+  if(s == '12:00:00AM'){
+      return '00:00:00';
+  }
+  if(s == '12:00:00PM'){
+      return '12:00:00';
+  }
+  if(s[8] == 'A'){
+      if(s[0] == '1' && s[1] == '2'){
+          let arrA = s.split('');
+          arrA[0] = '0';
+          arrA[1] = '0';
+          arrA.splice(8, 2);
+          let resA = arrA.join('');
+          return resA;
+      }else{
+          let arrA = s.split('');
+          arrA.splice(8, 2);
+          let resA = arrA.join('');
+          return resA;
+      }
+  }else{
+      let arr = s.split('');
+      let hour = s.split('').splice(0, 2).join('');
+      let newHour = myTab[hour].toString();
+      arr.splice(0, 2);
+      arr.splice(6, 2);
+      let stringArr = arr.join('');
+      return newHour + stringArr;
+  }
 }

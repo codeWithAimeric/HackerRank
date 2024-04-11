@@ -1,15 +1,3 @@
-/*
- * Complete the 'countApplesAndOranges' function below.
- *
- * The function accepts following parameters:
- *  1. INTEGER s
- *  2. INTEGER t
- *  3. INTEGER a
- *  4. INTEGER b
- *  5. INTEGER_ARRAY apples
- *  6. INTEGER_ARRAY oranges
- */
-
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
     // Write your code here
     let resApples = apples.map(element => element+a);
@@ -20,3 +8,13 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     console.log(countApple);
     console.log(countOrange);
 }
+
+
+let apples = [2, 3, -4];
+let oranges = [3, -2, -4];
+let s = 7;
+let t  = 10;
+let a = 4;
+let b = 12;
+
+countApplesAndOranges(s, t, a, b, apples, oranges);

@@ -6,14 +6,25 @@
  */
 
 function migratoryBirds(arr) {
-    // Write your code here
-     let maxVal=0;
-    let objectArr=arr.reduce((obj, b)=> {
-        obj[b] = ++obj[b] || 1;
-        return obj;
-      }, {});
-      
-    maxVal = Math.max(...Object.values(objectArr));
-    let res = Object.keys(objectArr).find(key => objectArr[key] === maxVal);
-    return parseInt(res);
+  const myMap = new Map();
+  for(let i=0; i<arr.length; i++){
+      if(myMap.get(arr[i])){
+          myMap.set(arr[i], myMap.get(arr[i])+1);
+      }else{
+          myMap.set(arr[i], 1);
+      }
+  }
+  let maxKey = null;
+  let maxValue = Number.NEGATIVE_INFINITY;
+  let keysWithMaxValue = [];
+  for(const [key, value] of myMap.entries()){
+      if(value > maxValue){
+          maxValue = value;
+          maxKey = key;
+          keysWithMaxValue = [key];
+      }else if(value == maxValue){
+          keysWithMaxValue.push(key);
+      }
+  }
+  return Math.min(...keysWithMaxValue.map(Number));
 }

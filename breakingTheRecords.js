@@ -11,22 +11,17 @@ function breakingRecords(scores) {
     let tempMin = scores[0];
     let countMax = 0;
     let countMin = 0;
-    let resTab = [];
-    for(let i=1; i<scores.length; i++){
-        if(tempMax < scores[i]){
+    for(let i=0; i<scores.length; i++){
+        if(scores[i] > tempMax){
             tempMax = scores[i];
             countMax++;
         }
-    }
-    resTab.push(countMax);
-    for(let i=1; i<scores.length; i++){
-        if(tempMin > scores[i]){
+        if(scores[i] < tempMin){
             tempMin = scores[i];
             countMin++;
         }
     }
-    resTab.push(countMin);
-    return resTab;
+    return [countMax, countMin];
 }
 
 const scores = [10, 5, 20, 20, 4, 5, 2, 25, 1]; //[2, 4]
