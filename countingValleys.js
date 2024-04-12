@@ -9,29 +9,25 @@
 
 function countingValleys(steps, path) {
     // Write your code here
-    let point = 0;
-    let tempFin = -1;
-    let tempDebut = 0;
-    let resTemp; 
     let count = 0;
-    for(let i=0; i<path.length; i++){
-        if(path[i] == 'U'){
-            point++;
+    let altitude = 0;
+    let ar = path.split('');
+    let isValley = false;
+    for(let i=0; i<ar.length; i++){
+        if(ar[i] == 'U'){
+            altitude++;
+        }else{
+            altitude--;
         }
-        if(path[i] == 'D'){
-            point--;
+        if(altitude == -1){
+            isValley = true;
         }
-        if(point == 0){
-            tempDebut = tempFin+1;
-            tempFin = i;
-            resTemp = path.substring(tempDebut, tempFin + 1);
-            console.log(resTemp);
-            if(resTemp[0] == 'D'){
-                count++;
-            }else continue;
+        if(altitude == 0 && isValley){
+            count++;
+            isValley = false;
         }
     }
-    return count;      
+    return count; 
 }
 
 let steps = 8;
