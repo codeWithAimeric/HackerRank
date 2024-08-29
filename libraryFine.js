@@ -13,32 +13,18 @@
 
 function libraryFine(d1, m1, y1, d2, m2, y2) {
     // Write your code here
-    let fine = 0;
-    let diffDay = 0;
-    let diffMonth = 0;
-    if(y1 < y2){
-        return fine; 
+    const dueDate = new Date(y2, m2 - 1, d2).getTime();
+    const returnDate = new Date(y1, m1 - 1, d1).getTime();
+    
+    if (returnDate <= dueDate) {
+        return 0;
+    } else if (y1 > y2) {
+        return 10000;
+    } else if (m1 > m2 && y1 === y2) {
+        return 500 * (m1 - m2);
+    } else if (d1 > d2 && m1 === m2 && y1 === y2) {
+        return 15 * (d1 - d2);
     }
-    if((m1 == m2) && (y1 == y2)){
-        if(d1>=d2){
-            diffDay = d1 - d2;
-            fine = diffDay * 15;
-            return fine;
-        }else{
-            return fine;
-        }
-    }
-    if((y1 == y2) && (m1 != m2)){
-        if(m1 > m2){
-            diffMonth = Math.abs(m1-m2);
-            fine = diffMonth * 500;
-            return fine;
-        }else if(m1 < m2){
-            return 0;
-        }
-    }
-    if(y1 != y2){
-        fine = 10000;
-        return fine; 
-    }
+    
+    return 0;
 }

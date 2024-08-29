@@ -1,4 +1,7 @@
-function jumpingOnClouds(c, k) {
+/**
+ * petit fonction de test
+ */
+function testFunction(c, k) {
     let e = 100;
     let n = c.length;
     for(let i=0; i<c.length; i++){
@@ -15,7 +18,6 @@ function jumpingOnClouds(c, k) {
     }
     return e;
 }
-
 let c=[0,0,1,0,0,1,1,0];
 let k=2;
 console.log(testFunction(c, k));

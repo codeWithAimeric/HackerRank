@@ -7,9 +7,10 @@
  *  2. INTEGER m
  *  3. INTEGER s
  */
-//n: number of prisoner
+//n: number of prisoner //
 //m: number of candy
 //s: the position where to start distribution
+
 
 function saveThePrisoner(n, m, s) {
     // Write your code here

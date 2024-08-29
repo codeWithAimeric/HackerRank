@@ -10,10 +10,21 @@
 
 function circularArrayRotation(a, k, queries) {
     // Write your code here
-    return queries.map(value => a.reduce((target, item, index) => {
-        let focus = (index + k) % a.length;
-        target[focus] = item;
+    // return queries.map(value => a.reduce((target, item, index) => {
+    //     let focus = (index + k) % a.length;
+    //     target[focus] = item;
 
-        return target;
-    }, [])[value]);
+    //     return target;
+    // }, [])[value]);
+    let n = a.length;
+    let res = [];
+    let copyArr = Array.from(a);
+     for (let i = 0; i < n; i++) {
+        let newIndex = (i + k) % n;
+        a[newIndex] = copyArr[i];
+    }
+    for(let i=0; i<queries.length; i++){
+        res.push(a[queries[i]]);
+    }
+    return res;
 }

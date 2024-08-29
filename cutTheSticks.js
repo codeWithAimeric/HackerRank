@@ -7,22 +7,15 @@
 
 function cutTheSticks(arr) {
     // Write your code here
-    let resTab = [];
-    let minVal = 0;
-    resTab.push(arr.length);
-    while(arr.length > 1){
-        minVal = Math.min(...arr);
-        for(let i=arr.length-1; i>=0; i--){
-            arr[i] -= minVal;
-            if(arr[i] == 0){
-                arr.splice(i, 1);
-            }
-        }
-        if(arr.length>0){
-            resTab.push(arr.length);
-        }
+    const ans = [];
+    
+    while (arr.length > 0) {
+        ans.push(arr.length);
+        const minVal = Math.min(...arr);
+        arr = arr.filter(stick => stick > minVal).map(stick => stick - minVal);
     }
-    return resTab;
+    
+    return ans;
 }
 module.exports = cutTheSticks;
 

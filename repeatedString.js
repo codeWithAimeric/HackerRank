@@ -9,28 +9,21 @@
 
 function repeatedString(s, n) {
     // Write your code here
-    let multiple =0;
-    let nbS = 0;
-    let modulo = 0;
-    let res1 = 0;
-    let res2 = 0;
-    let tempS = [];
-    if(!s.includes('a')){
-        return 0;
+    let aCount = 0;
+    const strLength = s.length;
+    const fullRepetitions = Math.floor(n / strLength);
+    const remainder = n % strLength;
+
+    for (let i = 0; i < strLength; i++) {
+        if (s[i] === 'a') aCount++;
     }
-    multiple = Math.floor(n/s.length);
-    modulo = n%s.length;
-    nbS = s.match(new RegExp("a", "g")).length;
-    res1 = nbS * multiple;
-    if(modulo != 0){
-        tempS = s.slice(0, modulo);
-        if(tempS.includes('a')){
-             res2 = tempS.match(new RegExp("a", "g")).length;
-        }
-        return res1 + res2;
-    }else{
-        return res1;
+
+    let totalCount = aCount * fullRepetitions;
+    for (let i = 0; i < remainder; i++) {
+        if (s[i] === 'a') totalCount++;
     }
+
+    return totalCount;
 }
 
 let s='gfcaaaecbg';
